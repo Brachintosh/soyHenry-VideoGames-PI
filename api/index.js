@@ -40,7 +40,8 @@ conn.sync({ force: true }).then(async () => {
         name: g.name,
       }
     });
-    console.log("Soy formatAPI >>> ", formatAPI);
+    // console.log("Soy formatAPI >>> ", formatAPI);
+    
     // Por último, los guardo/creo en DB.
     // "bulkCrete" ---> recibe un array y crea una fila por cada uno que recibe.
     
@@ -50,7 +51,7 @@ conn.sync({ force: true }).then(async () => {
 
   server.listen(3001, () => {
 
-    console.log('Server ready and listening at port: 3001'); // eslint-disable-line no-console
+    console.log('Server it`s ready and listening at port: 3001'); // eslint-disable-line no-console
   });
   
 })

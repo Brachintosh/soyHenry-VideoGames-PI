@@ -28,7 +28,7 @@ router.post('/', async(req, res) => {
         vGameCreated.addGenre(genreDB);
         vGameCreated.addPlatform(platformDB);
 
-        console.log("soy vGameCreated >>>", vGameCreated);
+        // console.log("soy vGameCreated >>>", vGameCreated);
 
         res.status(200).json(vGameCreated)
 

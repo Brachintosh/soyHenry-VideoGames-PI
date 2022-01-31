@@ -17,7 +17,7 @@ router.get('/:id', async(req, res) => {
             include:[Genre, Platform],
         });
 
-        console.log("Soy GameDB by ID >>> ", gameDB)
+        // console.log("Soy GameDB by ID >>> ", gameDB)
         return res.json(gameDB);
         }
         // Sino está en DB, busco en API:
@@ -25,7 +25,7 @@ router.get('/:id', async(req, res) => {
         `https://api.rawg.io/api/games/${id}?key=${API_KEY}`
     );
 
-        console.log("Soy API-Game by ID >>> ", gameAPI.data)
+        // console.log("Soy API-Game by ID >>> ", gameAPI.data)
         res.json(gameAPI.data);
         
         } catch (err){    

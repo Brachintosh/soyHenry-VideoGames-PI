@@ -1,20 +1,19 @@
 const axios = require('axios');
 const { Videogame, Platform, Genre } = require('../db');
 const { API_KEY } = process.env;
-const { URL_GAMES } = 'https://api.rawg.io/api/games'
 
 const getAPI_Info = async() => {
 
     try {
         // API:
-        let gamesPageONE = axios.get(`${URL_GAMES}?key=${API_KEY}`);
-        let gamesPageTWO = axios.get(`${URL_GAMES}?key=${API_KEY}&page=2`);
-        let gamesPageTHREE = axios.get(`${URL_GAMES}?key=${API_KEY}&page=3`);
-        let gamesPageFOUR = axios.get(`${URL_GAMES}?key=${API_KEY}&page=4`);
-        let gamesPageFIVE = axios.get(`${URL_GAMES}?key=${API_KEY}&page=5`);
-        let gamesPageSIX = axios.get(`${URL_GAMES}?key=${API_KEY}&page=6`);
-        let gamesPageSEVEN = axios.get(`${URL_GAMES}?key=${API_KEY}&page=7`);
-        let gamesPageEIGHT = axios.get(`${URL_GAMES}?key=${API_KEY}&page=8`);
+        let gamesPageONE = axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`);
+        let gamesPageTWO = axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page=2`);
+        let gamesPageTHREE = axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page=3`);
+        let gamesPageFOUR = axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page=4`);
+        let gamesPageFIVE = axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page=5`);
+        let gamesPageSIX = axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page=6`);
+        let gamesPageSEVEN = axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page=7`);
+        let gamesPageEIGHT = axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page=8`);
 
         let promiseALL = await Promise.all([gamesPageONE, gamesPageTWO, gamesPageTHREE, gamesPageFOUR, gamesPageFIVE, gamesPageSIX, gamesPageSEVEN, gamesPageEIGHT]);
 

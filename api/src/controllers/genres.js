@@ -8,10 +8,10 @@ const getGenres = async(req, res) => {
         const vgAPI = await axios.get(
             `https://api.rawg.io/api/genres?key=${API_KEY}`
         );
-        console.log("Soy vgAPI >>> ", vgAPI.data.results);
+        // console.log("Soy vgAPI >>> ", vgAPI.data.results);
 
         const vg_genres = vgAPI.data.results;
-        console.log("Soy Genres >>> ", vg_genres);
+        // console.log("Soy Genres >>> ", vg_genres);
 
         vg_genres.forEach(async (g) => {
             await Genre.findOrCreate({
@@ -23,7 +23,7 @@ const getGenres = async(req, res) => {
 
         const allGenres = await Genre.findAll();
 
-        console.log("Soy AllGenres >>> ", allGenres);
+        // console.log("Soy AllGenres >>> ", allGenres);
         res.status(200).json(allGenres);
         
     } catch (err) {
