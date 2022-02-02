@@ -32,14 +32,14 @@ const getAPI_Info = async() => {
                 id: el.id,
                 name: el.name,
                 released: el.released,
-                backgroumd_image: el.backgroumd_image,
+                background_image: el.background_image,
                 rating: el.rating,
                 platforms: el.platforms.map(p => p.platform.name),
                 Genres: el.genres.map(g => g.name),
             }
         });
         
-        console.log("Soy infoAPI >>> ", infoAPI);
+        // console.log("Soy infoAPI >>> ", infoAPI);
         return infoAPI;
 
     } catch (error) {
@@ -73,7 +73,7 @@ const getAllVgames = async() => {
         
         const infoTotal = infoAPI.concat(infoDB);
 
-        console.log("Soy infoTotal >>> ", infoTotal);
+        // console.log("Soy infoTotal >>> ", infoTotal);
         return infoTotal;
 
     } catch (error) {

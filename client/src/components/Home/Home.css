@@ -1,0 +1,10 @@
+.card-container {
+    display: grid;
+    padding: 1%;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 15px;
+    justify-content: center;
+    border: solid black 2px;
+
+}
