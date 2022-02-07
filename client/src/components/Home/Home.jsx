@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getVideoGames, getPlatforms, filterCreated, sortVideoGames } from "../../redux/actions/index";
 import { Link } from "react-router-dom";
 import Card from "../Card/Card.jsx";
-import Pagination from "../Pagination/Pagination.jsx";
+import Paginado from "../Paginado/Paginado.jsx";
 import SearchBar from "../SearchBar/SearchBar.jsx";
 import './Home.css';
 
@@ -21,17 +21,17 @@ export default function Home(){
     const dispatch = useDispatch();
     const allVgames = useSelector((state) => state.videogames);
     // Paginado:
+    // const [orden, setOrden] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
-    const [vgamesPerPage] = useState(15);
     // eslint-disable-next-line
-    const [orden, setOrden] = useState('');
+    const [vgamesPerPage, setVideogamesPerPage] = useState(15);
 
-    const indexOfLastVgames = currentPage * vgamesPerPage;
-    const indexOfFirstVgames = indexOfLastVgames - vgamesPerPage;
+    const indexOfLastVgames= currentPage * vgamesPerPage    //15
+    const indexOfFirstVgames = indexOfLastVgames - vgamesPerPage    //0
     const currentVgames = allVgames.slice(indexOfFirstVgames, indexOfLastVgames)
-    console.log(currentVgames);
-    const paginado = (pageNumber) => {
-        setCurrentPage(pageNumber);
+    console.log(currentVgames)
+    const paginado = (pageNumber) =>{
+        setCurrentPage(pageNumber)
     }
     // Hooks:
     useEffect(() => {
@@ -51,7 +51,7 @@ export default function Home(){
     function handleSortGames(e) {
         dispatch(sortVideoGames(e.target.value));
         setCurrentPage(1);
-        setOrden(`Ordenado ${e.target.value}`);
+        // setOrden(`Ordenado ${e.target.value}`);
     }
 
 
@@ -81,7 +81,8 @@ export default function Home(){
             </div>
 
             {/* PAGINADO: */}
-            <Pagination
+            <Paginado
+                value={currentPage}
                 vgamesPerPage = {vgamesPerPage}
                 allVgames = {allVgames.length}
                 paginado = {paginado}
@@ -109,6 +110,7 @@ export default function Home(){
                         </div>
                     )
                 })
+                
             }
             </div>
         </div>

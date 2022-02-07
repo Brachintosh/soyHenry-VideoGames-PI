@@ -30,7 +30,7 @@ export default function Details(){
                    <h2><u>{vGameDetails.name}:</u></h2>
                    <img src={vGameDetails.background_image} alt="Img of videogames" style={{width: '650px', height:'530px', borderRadius:'4.3%'}}/>
                    <ul><h3><u>Rating:</u></h3> {vGameDetails.rating} </ul>
-                   <ul><h3><u>Platforms:</u></h3> {vGameDetails.id?.length > 7 ? vGameDetails.platforms?.map(el => el.name)
+                   <ul><h3><u>Platforms:</u></h3> {vGameDetails.id?.length > 7 ? vGameDetails.platforms?.map(el => el.name).join(' || ')
                     : vGameDetails.platforms?.map(el => el.platform.name).join(' || ') }.</ul>
                    <ul><h3><u>Genres:</u></h3> {vGameDetails.genres?.map(el => el.name).join(', ')}.</ul>
                    <ul><h3><u>Release Date:</u></h3> {vGameDetails.released || vGameDetails.releaseDate}.</ul>

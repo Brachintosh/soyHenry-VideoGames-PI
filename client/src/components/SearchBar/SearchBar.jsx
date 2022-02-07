@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { getNameVgames } from "../../redux/actions/index";
 
 
-export default function SearchBar({paginaLocal}) {
+export default function SearchBar() {
 
     const dispatch = useDispatch();
     const [name, setName] = useState('');
@@ -20,11 +20,10 @@ export default function SearchBar({paginaLocal}) {
             dispatch(getNameVgames(name));
             setName('');
         }
-        paginaLocal(1);
+        // paginaLocal(1);      {paginaLocal}
     };
 
-    return(
-        <div>
+    return <div>
             {
                 <form>
                     <input
@@ -42,5 +41,4 @@ export default function SearchBar({paginaLocal}) {
                 </form>
             }
         </div>
-    );
 };

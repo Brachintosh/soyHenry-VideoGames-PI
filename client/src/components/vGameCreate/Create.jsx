@@ -50,21 +50,23 @@ export default function Create(){
     });
 
     function handleOnChanges(e) {
+        e.preventDefault();
         setInput({
             ...input,
-            [e.target.value]: e.target.value,
+            [e.target.name]: e.target.value,
         });
         console.log("Soy INPUT >>> ", input);
         // Validacion de input:
         setErrors(
             validateErrors({
                 ...input,
-                [e.target.value]: e.target.value,
+                [e.target.name]: e.target.value,
             })
         );
     };
 
     function handlePlatformSelected(e) {
+        e.preventDefault();
         setInput({
             ...input,
             platforms: [...input.platforms, e.target.value],
@@ -72,6 +74,7 @@ export default function Create(){
     };
 
     function handleGenreSelected(e) {
+        e.preventDefault();
         setInput({
             ...input,
             genres: [...input.genres, e.target.value],
@@ -80,14 +83,16 @@ export default function Create(){
 
     function handleSubmit(e) {
         e.preventDefault();
-
-        setErrors(
-            validateErrors({
-                ...input,
-                [e.target.name]: e.target.value,
-            })
-        );
-
+        //  CONTROLO QUÉ TIENE EL FORM ANTES DE SER ENVIADO:
+        if( input.name &&
+            input.background_image &&
+            input.rating &&
+            input.releaseDate &&
+            input.description &&
+            input.genres &&
+            input.platforms
+            ){
+        //  LLAMO A LA FUNCTION QUE CONECTA CON EL back-end Y LE MANDO LO QUE TIENE input:
         dispatch(postVgame(input));
         alert("VideoGame was created successfully !");
         setInput({
@@ -99,7 +104,8 @@ export default function Create(){
             genres: [],
             platforms: [],
         });
-        history.push('/home');
+        history('/home');
+        }else(alert('Must feel all the inputs.'));
     };
 
     function handleDelete(e) {
@@ -126,7 +132,7 @@ export default function Create(){
             <div>
                 <h2><u>Create your own Game:</u></h2><br />
 
-                <form onSubmit={(e) => handleSubmit(e)}>
+                <form onSubmit={handleSubmit}>
                     <div>
                         <label>Name: </label>
                         <input
@@ -144,7 +150,7 @@ export default function Create(){
                     <div>
                         <label>Image: </label>
                         <input 
-                            className='input-form'    type="text"   name='image'
+                            className='input-form'    type='text'   name='background_image'
                             placeholder='Image Link....'    value={input.background_image}
                             onChange={handleOnChanges}
                         />
@@ -158,7 +164,7 @@ export default function Create(){
                     <div>
                         <label>Rating: </label>
                         <input 
-                            className='input-form'   type="text"    name='rating'
+                            className='input-form'   type='text'    name='rating'
                             placeholder='Numbers 1 to 5 max.'   value={input.rating}
                             onChange={handleOnChanges}
                         />
@@ -172,8 +178,9 @@ export default function Create(){
                     <div>
                         <label>Release Date: </label>
                         <input
-                            className='input-form' type="text"    name='releaseDate'
-                            placeholder='e.g. 2001-9-11'    value={input.releaseDate}
+                            className='input-form' type="date"    name='releaseDate'    id='releseDateGame'
+                            // placeholder='e.g. 2001-9-11'    
+                            min='2019-12-31'  max='2022-12-31'    value={input.releaseDate}
                             onChange={handleOnChanges}
                         />
                         {
@@ -186,7 +193,7 @@ export default function Create(){
                     <div>
                         <label>Description: </label>
                         <input
-                        className='input-form'   type="text"    name='description'
+                        className='input-form'   type="textarea"    name='description'
                         placeholder='Breif resume about the game...'    value={input.description}
                         onChange={handleOnChanges}
                         />

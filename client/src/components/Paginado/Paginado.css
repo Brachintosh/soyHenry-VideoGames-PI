@@ -3,8 +3,8 @@
     justify-content: center;
     padding: 20px 0px 40px;
     margin: 2%;
+    font-family: "Audiowide", sans-serif;
 
-    border: solid purple 2px;
 }
 
 .div-paginado button {
@@ -14,7 +14,6 @@
     text-decoration: none;
     border: 1.4px solid whitesmoke;
     border-radius: 4px;
-
 
   }
 
@@ -27,7 +26,6 @@
 }
 
 .actual {
-
     background-color: rgba(0, 0, 0, 0.644);
     transition: all 500ms;   
 }
