@@ -1,21 +1,3 @@
-/* .home-container {
-    height:100vh;
-    background-image: url(http://cdn30.us1.fansshare.com/image/gamewallpapers/retro-video-game-wallpapergaming-hd-gaming-wallpapers-gaming-wallpapers-laptops-pc-computers-chair-mouse-news-international-keyboard-headset-reddit-retro-1728188636.jpg);
-    background-attachment: fixed;
-    background-size: cover;
-} */
-
-.card-container {
-    display: grid;
-    padding: 1%;
-    grid-template-columns: auto auto auto;
-    grid-column-gap: 20px;
-    grid-row-gap: 15px;
-    justify-content: center;
-    border: solid black 2px;
-
-}
-
 
 /* ----------------LOADING--------SPINER------------------------- */
 .lds-spinner,

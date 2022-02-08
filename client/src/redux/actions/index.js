@@ -16,7 +16,7 @@ export function getNameVgames(name){
 
     return async function(dispatch){
         try {
-            var nameSearch = await axios.get("http://localhost:3001/videogames?name=" + name);
+            var nameSearch = await axios.get(`http://localhost:3001/videogames?name=${name}`);
 
             console.log("Soy el resultado de la busqueda... >>> ", nameSearch.data)
 
@@ -25,8 +25,8 @@ export function getNameVgames(name){
                 payload: nameSearch.data,
             })
 
-        } catch (error) {
-            console.log(error)
+        } catch (e) {
+            alert("Error: Game name was not found...");
         }
     }
 };
@@ -85,18 +85,33 @@ export function postVgame(payload){
         return infoGame;
     };
 };
-
+//  API / DB:
 export function filterCreated (payload){
     return {
         type:'FILTER_CREATED',
         payload,
     };
 };
-
-export  function sortVideoGames(payload){
-    
-    return{
-        type: 'SORT_VIDEOGAMES',
-        payload,
+// FILTER GENRES:
+export function filterBy_Genre(gen) {
+    return {
+        type: 'FILTER_BY_GENRES',
+        payload: gen,
     };
+};
+
+// Orden por A_Z:
+export function orderBy_AZ(value) {
+    return{
+        type: 'ORDER_AZ',
+        payload: value,
+    }
+};
+
+// Orden por Rating:
+export function orderBy_Rating(value) {
+    return {
+        type: 'ORDER_RATING',
+        payload: value,
+    }
 };

@@ -1,7 +1,10 @@
 .create-container { 
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-
+    align-content: center;
+    color: palegoldenrod;
+    height:100vh;
+    background-image: url(http://cdn26.us1.fansshare.com/photo/gamewallpapers/super-mario-level-wallpaper-am-gamer-wallpapers-607911785.jpg);
+    background-attachment: fixed;
+    background-size: cover;
 }

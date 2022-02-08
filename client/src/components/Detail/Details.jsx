@@ -26,9 +26,9 @@ export default function Details(){
             {
                 vGameDetails ?
                
-               <div>
-                   <h2><u>{vGameDetails.name}:</u></h2>
-                   <img src={vGameDetails.background_image} alt="Img of videogames" style={{width: '650px', height:'530px', borderRadius:'4.3%'}}/>
+               <div className="info-details">
+                   <h2><u>{vGameDetails.name}:</u></h2><br />
+                   <img src={vGameDetails.background_image} alt="Img of videogames" style={{width: '350px', height:'230px', borderRadius:'4.3%'}}/> <br />
                    <ul><h3><u>Rating:</u></h3> {vGameDetails.rating} </ul>
                    <ul><h3><u>Platforms:</u></h3> {vGameDetails.id?.length > 7 ? vGameDetails.platforms?.map(el => el.name).join(' || ')
                     : vGameDetails.platforms?.map(el => el.platform.name).join(' || ') }.</ul>

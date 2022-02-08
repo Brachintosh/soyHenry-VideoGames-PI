@@ -8,7 +8,7 @@ export default function Card({id, name, background_image, rating, genres}) {
                 <h3>{name}</h3>
                 <div className="genres-info">
                     <label>Genres:</label>
-                    <h4>{ genres.join(' - ') }</h4>
+                    <h4>{ genres }</h4>
                 </div>
                 <img className='vg-img' src={background_image} alt="img not found" width='330px' height='250px' />
                 <div className="rating-info">

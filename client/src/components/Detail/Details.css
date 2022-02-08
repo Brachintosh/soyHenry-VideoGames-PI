@@ -1,3 +1,19 @@
+.details-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height:100%;
+  background-image: url(http://cdn30.us1.fansshare.com/image/gamewallpapers/game-wallpapers-hd-426789314.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.info-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
 
 /* ----------------LOADING--------SPINER------------------------- */
 .lds-spinner,

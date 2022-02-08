@@ -4,27 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { postVgame, getGenres, getPlatforms } from '../../redux/actions/index.js';
 import './Create.css';
 
-// VALIDACION:
-function validateErrors(input){
-    var validIMG = /^(ftp|http|https):\/\/[^ "]+$/.test(input.image);
-    let errors = {};
-
-    if(!input.name){
-        errors.name = 'Each game must have a Name!';
-    } else if(!input.background_image || !validIMG){
-        errors.background_image = 'Image must have a valid Link.'
-
-    } else if(!input.description || input.lenght > 3){
-        errors.description = 'Description must be present...'
-
-    } else if(!input.released){
-        errors.released = 'Game must have a date of released.'
-
-    } else if(input.rating === 0 || input.rating === '' || input.rating < 1 || input.rating >= 5 ){
-        errors.rating = 'Game Rating must be from 1 to 5 points.'
-    }
-        return errors;
-}
 
 export default function Create(){
 
@@ -34,6 +13,29 @@ export default function Create(){
     // console.log("Soy Genres >>> ", genres);
     const platforms = useSelector((state) => state.platforms);
     // console.log("Soy Platforms >>> ", platforms);
+
+    // VALIDACION:
+    function validateErrors(input){
+        // var validIMG = /^(ftp|http|https):\/\/[^ "]+$/.test(input.image);    || !validIMG
+        let errors = {};
+
+        if(!input.name){
+            errors.name = 'Each game must have a Name!';
+        } else if(!input.background_image ){
+            errors.background_image = 'Image must have a valid Link.'
+
+        } else if(!input.description || input.lenght > 3){
+            errors.description = 'Description must be present...'
+
+        } else if(!input.released){
+            errors.released = 'Game must have a date of released.'
+
+        } else if(!input.rating || input.rating === 0 || input.rating === '' || input.rating < 1 || input.rating >= 5 ){
+            errors.rating = 'Game Rating must be from 1 to 5 points.'
+        }
+            return errors;
+    }
+
 
     // useHistory ahora se llama useNavigate [[ v6 react-router-dom ]]
     const history = useNavigate(); 
@@ -178,7 +180,7 @@ export default function Create(){
                     <div>
                         <label>Release Date: </label>
                         <input
-                            className='input-form' type="date"    name='releaseDate'    id='releseDateGame'
+                            className='input-form' type="text"    name='releaseDate'    id='releseDateGame'
                             // placeholder='e.g. 2001-9-11'    
                             min='2019-12-31'  max='2022-12-31'    value={input.releaseDate}
                             onChange={handleOnChanges}
@@ -251,13 +253,13 @@ export default function Create(){
                             SUBMIT
                     </button>
 
-                </form>
+                </form><br />
                 
-            </div>  <br />
-
             <Link to='/home'>
                 <button>Go Back</button>
             </Link>
+            </div>  
+
         </div>
     );
 };

@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+.container-landing {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height:100vh;
+    background-image: url(http://cdn30.us1.fansshare.com/image/gamewallpapers/download-games-wallpapers-hd-wallpaper-1170028469.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.link-home { 
+    text-decoration: none;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    color: palegoldenrod;
+}
+
+.access-btn { 
+    border: none;
+    border-radius: 4px;
+    background-color: #009bcfcb;
+    box-shadow: 4px 6px 6px rgba(0, 0, 0, 0.527);
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 1.75px;
+    font-size: 40px;
+    text-shadow: 1.5px 1.3px rgb(238, 225, 225);
+    transition:  all;/* usaba >>background-color font-size cursor text-shadow >> "all"*/
+    transition-duration: 0.7s;
+}
+
+.access-btn:hover { 
+    background-color: #4caf4fd3;
+    color: white;
+    font-size: 50px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-shadow: 2.5px 2.3px rgba(20, 20, 20, 0.692);
+    box-shadow: 8px 10px 12px rgba(0, 0, 0, 0.527);
+}

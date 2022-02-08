@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { getNameVgames } from "../../redux/actions/index";
 
 
-export default function SearchBar() {
+export default function SearchBar({paginaLocal}) {
 
     const dispatch = useDispatch();
     const [name, setName] = useState('');
@@ -16,21 +16,23 @@ export default function SearchBar() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        if(name){
+        if(!name.length){
+            alert("Please enter a VideoGame name...");
+        } else {
             dispatch(getNameVgames(name));
             setName('');
         }
-        // paginaLocal(1);      {paginaLocal}
+        paginaLocal(1);
     };
 
     return <div>
             {
                 <form>
                     <input
-                        className="input-search"
-                        pattern="[a-zA-Z]{2,254}"
+                        type="text"
+                        // className="input-search"
+                        // pattern="[a-zA-Z]{2,254}"
                         value={name}
-                        required
                         placeholder="Search for a game..."
                         onChange={(e) => handleInputChanges(e)}
                     />
