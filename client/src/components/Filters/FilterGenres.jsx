@@ -22,7 +22,7 @@ export default function FilterGenres({paginaLocal}) {
         <div>
             <p><u>Select from:</u></p>
             <select name="filter-genres" id="f2" onChange={(e) => handleFilterGenres(e)} >
-                <option value="initial" key="genres">Genres</option>
+                <option value="genres" key="genres">Genres</option>
                 <option value="all" key="all">All</option>
                 {
                    allGenres && allGenres.map((g) => (

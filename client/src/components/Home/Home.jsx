@@ -54,10 +54,11 @@ export default function Home(){
     }
     
     if (!allVgames.length) {
-        return <LoaderHome />;
+        return <LoaderHome  className='loader-home' />;
     }
     return(
-        <div className="home-container">
+    <div className="home-container">
+        <div className="home-c">
             <h1>Gamming.Life</h1>
             <Link to='/create_game'><h6>Create a game</h6></Link>
             {/* REALOAD BUTTON */}
@@ -91,16 +92,16 @@ export default function Home(){
             {
                 currentVgames?.map((el) => {
                     return(
-                        <div>
-                            <Link to={'/videogame/' + el.id} style={{textDecoration:'none', color:'black'}} key={el.id} >
-                                <Card
+                        <div className="card-info">
+                            <Link to={'/videogame/' + el.id} style={{textDecoration:'none', color:'black', borderRadius:0}} key={el.id} >
+                                <Card 
                                     key={el.id}
                                     id={el.id}
                                     name={el.name}
                                     background_image={el.background_image}
                                     rating={el.rating}
                                     released={el.released? el.released : el.releaseDate}
-                                    genres={!currentVgames[0].created_inDB? el.Genres.join(' - ') : currentVgames[0].genres.map((g) => (g.name)).join(' - ')}
+                                    genres={el.genres?.map((g) => (g.name)).join(' - ') ||  el.Genres?.join(' - ')}
                                 />
                             </Link>
                         </div>
@@ -109,5 +110,6 @@ export default function Home(){
             }
             </div>
         </div>
+    </div>
     );
 };

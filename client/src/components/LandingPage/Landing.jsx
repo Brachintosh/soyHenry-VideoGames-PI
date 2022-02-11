@@ -7,7 +7,7 @@ export default function Landing() {
     return(
         <div className="container-landing">
             <div className="link-home">
-                <Link to='/home' style={{textDecoration:"none"}}>
+                <Link to='/home' style={{textDecoration:"none", position:'fixed'}}>
                 <h1>#Gamming.Life</h1>  <br />
                     <button className="access-btn">Check it!</button>
                 </Link>

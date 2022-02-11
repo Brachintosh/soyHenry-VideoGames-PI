@@ -26,7 +26,7 @@ const getAPI_Info = async() => {
         gamesPageSEVEN = promiseALL[6].data.results;
         gamesPageEIGHT = promiseALL[7].data.results;
 
-        let infoAPI = gamesPageONE.concat(gamesPageTWO).concat(gamesPageTHREE).concat(gamesPageFOUR).concat(gamesPageFIVE).concat(gamesPageSIX).concat(gamesPageSEVEN).concat(gamesPageSEVEN).concat(gamesPageEIGHT);
+        let infoAPI = gamesPageONE.concat(gamesPageTWO).concat(gamesPageTHREE).concat(gamesPageFOUR).concat(gamesPageFIVE).concat(gamesPageSIX).concat(gamesPageSEVEN).concat(gamesPageEIGHT);
         infoAPI = infoAPI.map((el) => {
             return {
                 id: el.id,

@@ -4,43 +4,33 @@ import { useDispatch, useSelector } from 'react-redux';
 import { postVgame, getGenres, getPlatforms } from '../../redux/actions/index.js';
 import './Create.css';
 
+// VALIDACION:
+function validate(input) {
+    let error = {};
+    if(!input.name) {
+      error.name = "Name your game !";
+    }
+    if(input.platforms?.length <= 0) {
+    error.platforms = "Platforms are required !";
+    }
+    if(!input.description || input.description.trim().length <= 3) {
+      error.description = "Description must be present.";
+    }
+    
+    return error;
+  };
 
 export default function Create(){
 
     const dispatch = useDispatch();
-    
     const genres = useSelector((state) => state.genres);
     // console.log("Soy Genres >>> ", genres);
     const platforms = useSelector((state) => state.platforms);
     // console.log("Soy Platforms >>> ", platforms);
 
-    // VALIDACION:
-    function validateErrors(input){
-        // var validIMG = /^(ftp|http|https):\/\/[^ "]+$/.test(input.image);    || !validIMG
-        let errors = {};
-
-        if(!input.name){
-            errors.name = 'Each game must have a Name!';
-        } else if(!input.background_image ){
-            errors.background_image = 'Image must have a valid Link.'
-
-        } else if(!input.description || input.lenght > 3){
-            errors.description = 'Description must be present...'
-
-        } else if(!input.released){
-            errors.released = 'Game must have a date of released.'
-
-        } else if(!input.rating || input.rating === 0 || input.rating === '' || input.rating < 1 || input.rating >= 5 ){
-            errors.rating = 'Game Rating must be from 1 to 5 points.'
-        }
-            return errors;
-    }
-
-
     // useHistory ahora se llama useNavigate [[ v6 react-router-dom ]]
     const history = useNavigate(); 
     const [errors, setErrors] = useState({});
-
     const [input, setInput] = useState({
         name: '',
         background_image: '',
@@ -51,6 +41,11 @@ export default function Create(){
         platforms: [],
     });
 
+    useEffect(() => {
+        dispatch(getGenres());
+        dispatch(getPlatforms());
+    }, [dispatch]);
+
     function handleOnChanges(e) {
         e.preventDefault();
         setInput({
@@ -60,7 +55,7 @@ export default function Create(){
         console.log("Soy INPUT >>> ", input);
         // Validacion de input:
         setErrors(
-            validateErrors({
+            validate({
                 ...input,
                 [e.target.name]: e.target.value,
             })
@@ -83,32 +78,32 @@ export default function Create(){
         });
     };
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        //  CONTROLO QUÉ TIENE EL FORM ANTES DE SER ENVIADO:
-        if( input.name &&
-            input.background_image &&
-            input.rating &&
-            input.releaseDate &&
-            input.description &&
-            input.genres &&
-            input.platforms
-            ){
-        //  LLAMO A LA FUNCTION QUE CONECTA CON EL back-end Y LE MANDO LO QUE TIENE input:
-        dispatch(postVgame(input));
-        alert("VideoGame was created successfully !");
-        setInput({
-            name: '',
-            background_image: '',
-            rating: '',
-            releaseDate: '',
-            description: '',
-            genres: [],
-            platforms: [],
-        });
-        history('/home');
-        }else(alert('Must feel all the inputs.'));
-    };
+    // function handleSubmit(e) {
+    //     e.preventDefault();
+    //     //  CONTROLO QUÉ TIENE EL FORM ANTES DE SER ENVIADO:
+    //     if( input.name &&
+    //         input.background_image &&
+    //         input.rating &&
+    //         input.releaseDate &&
+    //         input.description &&
+    //         input.genres &&
+    //         input.platforms
+    //         ){
+    //     //  LLAMO A LA FUNCTION QUE CONECTA CON EL back-end Y LE MANDO LO QUE TIENE input:
+    //     dispatch(postVgame(input));
+    //     alert("VideoGame was created successfully !");
+    //     setInput({
+    //         name: '',
+    //         background_image: '',
+    //         rating: '',
+    //         releaseDate: '',
+    //         description: '',
+    //         genres: [],
+    //         platforms: [],
+    //     });
+    //     history('/home');
+    //     }else(alert('Must feel all the inputs.'));
+    // };
 
     function handleDelete(e) {
         e.preventDefault();
@@ -118,10 +113,36 @@ export default function Create(){
         });
     };
 
-    useEffect(() => {
-        dispatch(getGenres());
-        dispatch(getPlatforms());
-    }, [dispatch]);
+    function handleSubmit(e) {
+        e.preventDefault();
+        if(!input.background_image) {
+            input.background_image = "https://www.pngkit.com/png/full/336-3365446_view-samegoogleiqdbsaucenao-404-oops-you-found-a-dead.png";
+        }
+        setErrors(
+            validate({
+                ...input,
+                [e.target.name]: e.target.value,
+            })
+        );
+
+        if(Object.keys(errors).length === 0) {
+            dispatch(postVgame(input));
+            alert("Game created successfully!");
+            setInput({
+                name: '',
+                background_image: '',
+                rating: '',
+                releaseDate: '',
+                description: '',
+                genres: [],
+                platforms: [],
+            });
+            history('/home');
+        }else{
+            alert("Error: Game was not created!");
+            return;
+        }
+    };
 
     let id = 0
     function addKey(){
@@ -137,7 +158,7 @@ export default function Create(){
                 <form onSubmit={handleSubmit}>
                     <div>
                         <label>Name: </label>
-                        <input
+                        <input autofocus
                             className='input-form'  type='text'    name='name'
                             placeholder='Be creative...'    value={input.name}
                             onChange={handleOnChanges}
@@ -151,22 +172,22 @@ export default function Create(){
 
                     <div>
                         <label>Image: </label>
-                        <input 
+                        <input autofocus
                             className='input-form'    type='text'   name='background_image'
                             placeholder='Image Link....'    value={input.background_image}
                             onChange={handleOnChanges}
                         />
                         {
-                            errors.background_image && (
-                                <p className='error'>   {errors.background_image}   </p>
-                            )
+                            // errors.background_image && (
+                            //     <p className='error'>   {errors.background_image}   </p>
+                            // )
                         }
                     </div>  <br />
 
                     <div>
                         <label>Rating: </label>
-                        <input 
-                            className='input-form'   type='text'    name='rating'
+                        <input autofocus
+                            className='input-form'   type='text' min='0' max='5'   name='rating'
                             placeholder='Numbers 1 to 5 max.'   value={input.rating}
                             onChange={handleOnChanges}
                         />
@@ -179,9 +200,9 @@ export default function Create(){
 
                     <div>
                         <label>Release Date: </label>
-                        <input
+                        <input autofocus
                             className='input-form' type="text"    name='releaseDate'    id='releseDateGame'
-                            // placeholder='e.g. 2001-9-11'    
+                            placeholder='e.g. 2001-9-11'    
                             min='2019-12-31'  max='2022-12-31'    value={input.releaseDate}
                             onChange={handleOnChanges}
                         />
@@ -194,11 +215,16 @@ export default function Create(){
 
                     <div>
                         <label>Description: </label>
-                        <input
+                        <input autofocus
                         className='input-form'   type="textarea"    name='description'
                         placeholder='Breif resume about the game...'    value={input.description}
                         onChange={handleOnChanges}
                         />
+                        {
+                            errors.description && (
+                                <p className='error'>   {errors.description}  </p>
+                            )
+                        }
                     </div>  <br />
 
                     <div>
@@ -207,10 +233,15 @@ export default function Create(){
                             <option name='genres' key='keyG'>Select from...</option>
                             {
                                 genres && genres.map((g) => (
-                                    <option key={g.id} value={g.name}>{g.name}</option>
+                                    <option key={g.id} value={g.name} name={g.name}>{g.name}</option>
                                 ))
                             }
                         </select>
+                        {
+                            errors.genres && (
+                                <p className='error'>   {errors.genres}  </p>
+                            )
+                        }
                     </div>  <br />
                     {/* BOTON PARA HACER CLICK Y BORRAR LA OPCION ELEGIDA: */}
                     <div className='btn-genres'>
@@ -230,10 +261,15 @@ export default function Create(){
                             <option name='platforms' key='keyP'>Choose from...</option>
                             {
                                 platforms && platforms.map(plat => (
-                                    <option key={plat.id} value={plat.name}>{plat.name}</option>
+                                    <option key={plat.id} value={plat.name} name={plat.name}>{plat.name}</option>
                                 ))
                             }
                         </select>
+                        {
+                            errors.platforms && (
+                                <p className='error'>   {errors.platforms}  </p>
+                            )
+                        }
                     </div>  <br />
                     {/* BOTON PARA HACER CLICK Y BORRAR LA OPCION ELEGIDA: */}
                     <div className='btn-platforms'>
@@ -263,3 +299,27 @@ export default function Create(){
         </div>
     );
 };
+
+
+
+    // VALIDACION:
+    // function validateErrors(input){
+    //     // var validIMG = /^(ftp|http|https):\/\/[^ "]+$/.test(input.image);    || !validIMG
+    //     let errors = {};
+
+    //     if(!input.name){
+    //         errors.name = 'Each game must have a Name!';
+    //     } else if(!input.background_image ){
+    //         errors.background_image = 'Image must have a valid Link.'
+
+    //     } else if(!input.description || input.lenght > 3){
+    //         errors.description = 'Description must be present...'
+
+    //     } else if(!input.released){
+    //         errors.released = 'Game must have a date of released.'
+
+    //     } else if(!input.rating || input.rating === 0 || input.rating === '' || input.rating <= 1 || input.rating >= 5 ){
+    //         errors.rating = 'Game Rating must be from 1 to 5 points.'
+    //     }
+    //         return errors;
+    // }

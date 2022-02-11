@@ -1,21 +1,58 @@
 .details-container {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  height:100%;
-  background-image: url(http://cdn30.us1.fansshare.com/image/gamewallpapers/game-wallpapers-hd-426789314.jpg);
-  background-attachment: fixed;
-  background-size: cover;
-}
-
-.info-details {
+  color: aliceblue;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
+  align-items: center;
+  height:100%;
+  background-image: url(https://backgroundlabs.com/files/black-mosaic-tiles-1510.png);
+  background-attachment: fixed;
+  background-size:auto;
+}
+
+h2 {
+  font-family: "Audiowide", sans-serif;
+  letter-spacing: 1.53px;
+}
+
+h3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Audiowide", sans-serif;
+  letter-spacing: 1.53px;
+  padding: 0px 0px 12px 0px;
+}
+
+.info-details {
+  margin: 2% 10% 2% 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ----------------LOADING--------SPINER------------------------- */
+.loader {
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:100%;
+  background-image: url(https://backgroundlabs.com/files/black-mosaic-tiles-1510.png);
+  background-attachment: fixed;
+  background-size:auto;
+  font-family: "Audiowide", sans-serif;
+  letter-spacing: 2.53px;
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .lds-spinner,
 .lds-spinner div,
 .lds-spinner div:after {
