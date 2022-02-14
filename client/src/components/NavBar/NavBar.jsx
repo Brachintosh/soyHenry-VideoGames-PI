@@ -5,12 +5,12 @@ import './NavBar.css';
 export default function NavBar() {
 
     return (
-        <div>
+        <div className="NavBar">
 
             <div className='landing-link'>
                 <div className='vg-logo'></div>
                 <Link
-                    style={{ textDecoration: "none", color: "white", paddingLeft: "15px" }} to="/">
+                    style={{ textDecoration: "none", color: "white", paddingLeft: "10px" }} to={"/"}>
                     Gamming.Life
                 </Link>
             </div>
@@ -19,13 +19,13 @@ export default function NavBar() {
 
                 <div className='link-home'>
                     <Link
-                        style={{ textDecoration: "none", color: "white" }} to="/Home">
+                        style={{ textDecoration: "none", color: "white" }} to={"/Home"}>
                         Home
                     </Link>
                 </div>
                 <div className='link-newgame'>
                     <Link
-                        style={{ textDecoration: "none", color: "white" }} to="/create_game">
+                        style={{ textDecoration: "none", color: "white" }} to={"/create_game"}>
                         Create a Game
                     </Link>
                 </div>

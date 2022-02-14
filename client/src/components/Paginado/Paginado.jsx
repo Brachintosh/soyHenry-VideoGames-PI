@@ -7,7 +7,7 @@ export default function Paginado({vgamesPerPage, allVgames, paginado, value}){
         pageNumbers.push(i)
     }
     return (
-        <div>
+        <div className="pag">
           <div className= "div-paginado">
             {pageNumbers && pageNumbers.map(number => (
               <div className= "btn-pag" key={number.toString()} >

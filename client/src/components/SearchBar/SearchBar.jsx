@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getNameVgames } from "../../redux/actions/index";
-
+import './SearchBar.css';
 
 export default function SearchBar({paginaLocal}) {
 
@@ -25,22 +25,21 @@ export default function SearchBar({paginaLocal}) {
         paginaLocal(1);
     };
 
-    return <div>
+    return <div className="box">
             {
-                <form>
-                    <input
-                        type="text"
-                        // className="input-search"
-                        // pattern="[a-zA-Z]{2,254}"
+                <form className="search">
+                    <input className="input"
+                        type="search"   name="search"   pattern=".*\S.*"    required
                         value={name}
                         placeholder="Search for a game..."
                         onChange={(e) => handleInputChanges(e)}
                     />
                     <button
-                        className="btn-search-bar" type="submit" onClick={(e) => handleSubmit(e)}>
-                        SEARCH
+                        className="search-btn" type="submit" onClick={(e) => handleSubmit(e)}>
+		                <span>Search</span>
                     </button>
                 </form>
             }
+            <i class="fas fa-search"></i>
         </div>
 };

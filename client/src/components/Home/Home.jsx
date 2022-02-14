@@ -59,34 +59,45 @@ export default function Home(){
     return(
     <div className="home-container">
         <div className="home-c">
-            <h1>Gamming.Life</h1>
+            
+            {/* <h1>Gamming.Life</h1>
             <Link to='/create_game'><h6>Create a game</h6></Link>
             {/* REALOAD BUTTON */}
-            <button onClick={e => handleOnClick(e)} >REALOAD GAMES</button><br/><br />
+            {/* <button onClick={e => handleOnClick(e)} >REALOAD GAMES</button><br/><br /> */}
+            
+
+                <div className='search-bar'>
+                    {/* SEARCH-BAR: */}
+                    <SearchBar paginaLocal={setCurrentPage} /><br /><br />
+                </div>
+
             {/* SORT Y FILTER */}
-            <div className="order-filters">
-                <div className="sort-az">
-                    <OrderAZ paginaLocal={setCurrentPage} />
-                </div>
-                <div className="order-rating">
-                    <OrderRating paginaLocal={setCurrentPage} />
-                </div>
-                 <div className="filter-created">
-                    <FilterCreated paginaLocal={setCurrentPage} />
-                </div>
-                <div className="filter-platforms/genres">
-                    <FilterGenres paginaLocal={setCurrentPage} />
+            <div className='order-filter-cont'>
+                <div className="order-filters">
+                    <div className="sort-az">
+                        <OrderAZ paginaLocal={setCurrentPage} />
+                    </div>
+                    <div className="order-rating">
+                        <OrderRating paginaLocal={setCurrentPage} />
+                    </div>
+                    <div className="filter-created">
+                        <FilterCreated paginaLocal={setCurrentPage} />
+                    </div>
+                    <div className="filter-platforms/genres">
+                        <FilterGenres paginaLocal={setCurrentPage} />
+                    </div>
                 </div>
             </div>
+
             {/* PAGINADO: */}
-            <Paginado
-                value={currentPage}
-                vgamesPerPage = {vgamesPerPage}
-                allVgames = {allVgames.length}
-                paginado = {paginado}
-            />
-            {/* SEARCH-BAR: */}
-            <SearchBar paginaLocal={setCurrentPage} /><br /><br />
+            <div className="paginado">
+                <Paginado
+                    value={currentPage}
+                    vgamesPerPage = {vgamesPerPage}
+                    allVgames = {allVgames.length}
+                    paginado = {paginado}
+                />
+            </div>
 
             <div className="card-container">
             {

@@ -3,20 +3,21 @@
     flex-direction: row;
     align-items: center;
     justify-content:space-evenly;
-    background-color: rgba(0, 0, 0, 0.842);
+    background-color:#262626;
     font-size: 20px;
     color: white;
     height:55px;
-    border: 1.3px solid rgba(255, 255, 255, 0.774);
-    
+    border: solid rgba(230, 219, 219, 0.678) 1.4px;
+    font-family: "Audiowide", sans-serif;
+    letter-spacing: .83px;
   }
-/* 
+
 .landing-link {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  margin-right: 54%;
+  margin-right: 51%;
 
 }
 
@@ -27,7 +28,7 @@
   display:flex;
   align-items: flex-start;
   flex-direction: row;
-  background-image: url(../../images/logotipo2a.png);
+  background-image: url(./icons8-controle-48.png);
   justify-content: center;
   background-size: 40px 40px;
   background-position: 0px -0.1px; 
@@ -65,4 +66,4 @@
   align-items:flex-start;
   justify-content: space-between;
   padding-right: 30px;
-} */
+}

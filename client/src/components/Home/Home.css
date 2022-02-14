@@ -1,29 +1,68 @@
 body{
   font-family: 'Red Hat Display', sans-serif;
+  
 }
 
 .home-container {
     color: aliceblue;
     height:360vh;
-    background-attachment:cover;
-    background-color: #242424;
+    background-image: url(https://backgroundlabs.com/files/black-mosaic-tiles-1510.png);
+    background-attachment: fixed;
+    background-size:auto;
+    padding-top: 10px;
+}
+
+.paginado {
+  display: flex;
+  padding: 90px 30px 20px 0px;
+  /* margin: 1%; */
+  position: static;
+}
+
+.search-bar-cont{
+  margin-left: 10em;
+  padding: 0px 10px 0px 50px;
+}
+
+.search-bar {
+  display: flex;
+  float: left;
+  padding: 40px 10px 0px 30px;
+}
+
+.order-filter-cont{
+  padding: 0px 50px 0px 10px;
+}
+
+.order-filters {
+  float: right;
+  background-attachment:cover;
+  background-color: #262626;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-evenly;
+  align-items:flex-end;
+  border: 1.8px solid rgba(247, 230, 247, 0.548);
+  border-radius: 15px;
+  box-shadow: -1px -1.1px 4.10px 2.90px rgba(171, 95, 216, 0.507);
+  width: 45%;
+  margin-left: 2%;
+  padding: 10px 0px 15px 0px;
 }
 
 .card-container {
-    /* font-family: "Audiowide", sans-serif; */
     letter-spacing: 0.53px;
     height: 320px;
     display: grid;
-    padding: 1.5%;
     grid-template-columns: auto auto auto;
-    grid-column-gap: 9px;
-    grid-row-gap: 20px;
+    grid-column-gap: 0.1px;
+    grid-row-gap: 32px;
     justify-content: space-evenly;
     align-items:stretch;
   }
   
-  .card{
-    border: solid rgba(230, 219, 219, 0.678) 1.5px;
+.card{
+    border: solid rgba(230, 219, 219, 0.678) 1.4px;
     border-radius: 5%;
 }
 

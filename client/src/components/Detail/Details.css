@@ -25,13 +25,53 @@ h3 {
   padding: 0px 0px 12px 0px;
 }
 
-.info-details {
-  margin: 2% 10% 2% 10%;
+.left {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  float: left;
+  padding-left: 40px;
+  padding-bottom: 10px;
 }
+
+.info-details {
+  padding: 90px 10px 0px 30px;
+  margin: 2% 10% 2% 10%;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  justify-content: space-evenly;
+  align-items:stretch;
+  
+}
+
+.info-center {
+  display: flex;
+  justify-content: center;
+}
+
+.info-card {
+  background-attachment:cover;
+  background-color: #262626;
+  padding: 10px 10px;
+  border: solid rgba(230, 219, 219, 0.678) 1.4px;
+  box-shadow: -1px -1.1px 4.10px 2.90px rgba(171, 95, 216, 0.507);
+  border-radius: 10px;
+  font-weight: 600;
+  font-size:18px;
+}
+
+.info-desc {
+  background-attachment:cover;
+  background-color: #262626;
+  margin: 5.3%;
+  padding: 15px 15px;
+  border: solid rgba(230, 219, 219, 0.678) 1.4px;
+  box-shadow: -1px -1.1px 4.10px 2.90px rgba(171, 95, 216, 0.507);
+  border-radius: 10px;
+  width: 80%;
+}
+
 
 /* ----------------LOADING--------SPINER------------------------- */
 .loader {

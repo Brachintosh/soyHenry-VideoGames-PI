@@ -26,33 +26,42 @@ export default function Details(){
                 {/* HASTA QUE NO CARGUEN LOS DATOS HAY UN SPINNER DE "LOADING..." */}
             {
                 vGameDetails ?
-               
-               <div className="info-details">
-                   <h2><u>{vGameDetails.name}:</u></h2><br />
-                   <img src={vGameDetails.background_image} alt="Img of videogames" style={{width: '400px', height:'330px', borderRadius:'4.3%'}}/> <br />
-                   <ul><h3><u>Rating:</u></h3> {vGameDetails.rating} </ul><br />
-                   <ul><h3><u>Platforms:</u></h3> {vGameDetails.id?.length > 7 ? vGameDetails.platforms?.map(el => el.name).join(' || ')
-                                                                            : vGameDetails.platforms?.map(el => el.platform.name).join(' || ') }.</ul><br />
-                   <ul><h3><u>Genres:</u></h3> {vGameDetails.genres?.map(el => el.name).join(', ')}.</ul><br />
-                   <ul><h3><u>Release Date:</u></h3> {vGameDetails.released || vGameDetails.releaseDate}.</ul><br />
-                   <ul><h3><u>Description:</u></h3><p id='text' ><strong> {vGameDetails.description_raw || vGameDetails.description } </strong></p></ul><br />
-               </div> 
-
+                <div>
+                    <div className="left" >
+                        <h2><u>{vGameDetails.name}:</u></h2><br />
+                        <img src={vGameDetails.background_image} alt="Img of videogames" style={{width: '550px', height:'330px', borderRadius:'4.3%', boxShadow: '-1.2px -1.10px 6.10px rgba(247, 243, 18, 0.897)'}}/> <br />
+                    </div>
+                    <div className="info-details">
+                        <div className="info-card">
+                            <ul><h3><u>Platforms:</u></h3> 
+                            <div className="info-center"> {vGameDetails.id?.length > 7 ? vGameDetails.platforms?.map(el => el.name).join(' || ')
+                                                                                        : vGameDetails.platforms?.map(el => el.platform.name).join(' || ') }. </div> </ul><br />
+                        </div>                                                                                    
+                        <div className="info-card">
+                            <ul><h3><u>Rating:</u></h3> 
+                            <div className="info-center" style={{paddingTop:'20px'}}>{vGameDetails.rating}</div> </ul><br />
+                        </div>
+                        <div className="info-card">
+                            <ul><h3><u>Genres:</u></h3> 
+                           <div className="info-center"> {vGameDetails.genres?.map(el => el.name).join(', ')}.</div></ul><br />
+                        </div>
+                        <div className="info-card">
+                        <ul><h3><u>Release Date:</u></h3> 
+                            <div className="info-center">{vGameDetails.released || vGameDetails.releaseDate}.</div></ul>
+                    </div> 
+                    </div>
+                        <div className="info-desc">
+                            <ul><h3><u>Description:</u></h3><p id='text' ><strong> {vGameDetails.description_raw || vGameDetails.description } </strong></p></ul>
+                        </div>
+               </div>                
                 :
                 // SPINNER WHILE IT'S LOADING //
                 <LoaderHome  className='loader' />
-            // <div className="spinner">
-            //    <div><br/><br/><br/><br/>
-            //         <h1 className="name-loading"> Loading... </h1><br /><br /><br/><br/><br/>
-            //         <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div><br/><br/><br/><br/><br/><br/><br/><br/>
-            //    </div>
-            // </div>
-
             }
 
-            <Link to={'/home'}>
-                <button><h2>Back to Home</h2></button>
-            </Link><br /><br />
+            <Link to={'/home'} style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+                <button><h4>Back to Home</h4></button>
+            </Link><br />
 
             </body>
         </div>
