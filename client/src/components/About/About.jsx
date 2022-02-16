@@ -11,14 +11,14 @@ import gmail from "../../images/gmailLogo3.png";
             
             <h2><u>ABOUT THIS SINGLE PAGE APPLICATION:</u></h2>
             <div className='about-text'>
-                <p><u> - Necessary technologies:</u>
+                <span><u> - Necessary technologies:</u>
                     <ul className='techs-text'><br />
                         <ul>[ ] React</ul>
                         <ul>[ ] Redux</ul>
                         <ul>[ ] Express</ul>
                         <ul>[ ] Sequelize - Postgres</ul>
                     </ul>
-                </p><br /><br />
+                </span><br /><br />
                 
                 <p>
                     Gamming.Life is a Full Stack Web Application of an individual project, 
@@ -42,11 +42,11 @@ import gmail from "../../images/gmailLogo3.png";
                     >
                         RAWG.io
                 </a>{" "}
-                        to obtain information about even all the videogames of the world,
-                        store them in a local database, and then work them and
-                        require them from the API itself.
+                        to obtain information about most of all the existent videogames of the world,
+                        store them in a local database, require and work them from the API itself.
                 </p>
             </div>
+        <div><div className='vg-logo'></div> <span>Gamming.Life by @brachintosh</span></div>
         </div>
 
         <div className="about-contact">

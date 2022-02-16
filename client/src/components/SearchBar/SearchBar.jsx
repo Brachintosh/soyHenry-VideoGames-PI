@@ -40,6 +40,6 @@ export default function SearchBar({paginaLocal}) {
                     </button>
                 </form>
             }
-            <i class="fas fa-search"></i>
+            <i className="fas fa-search"></i>
         </div>
 };

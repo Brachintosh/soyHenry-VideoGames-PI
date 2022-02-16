@@ -4,6 +4,7 @@ import { orderBy_AZ } from '../../redux/actions/index';
 
 export default function OrderAZ({paginaLocal}) {
     let dispatch = useDispatch();
+    // eslint-disable-next-line
     const [order, setOrder] = useState("");
 
     function handleOnChanges(e){

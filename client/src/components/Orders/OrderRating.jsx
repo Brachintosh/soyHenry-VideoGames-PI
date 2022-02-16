@@ -4,6 +4,7 @@ import { orderBy_Rating } from '../../redux/actions/index';
 
 export default function OrderRating({paginaLocal}) {
     let dispatch = useDispatch();
+    // eslint-disable-next-line
     const [order, setOrder] = useState("");
 
     function handleRatingOrder(e) {

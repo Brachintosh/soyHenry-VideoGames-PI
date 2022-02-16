@@ -15,11 +15,6 @@ import Paginado from "../Paginado/Paginado.jsx";
 import SearchBar from "../SearchBar/SearchBar.jsx";
 import './Home.css';
 
-// [ ] Botones/Opciones para filtrar por género y por videojuego existente o agregado por nosotros
-// [ ] Botones/Opciones para ordenar tanto ascendentemente como descendentemente los videojuegos por orden 
-//  alfabético y por rating
-
-
 export default function Home(){
 
     const dispatch = useDispatch();
@@ -39,32 +34,24 @@ export default function Home(){
     }
     // Hooks:
     useEffect(() => {
+        dispatch(getVideoGames());
         dispatch(getGenres());
         dispatch(getPlatforms());
       }, [dispatch]);
     
-      useEffect(() => {
-        dispatch(getVideoGames());
-      }, [dispatch]);
+        // if(allVgames.length === 0) {
+        //         dispatch(getVideoGames());
+        //         console.log("soy currentVgames >>> ", currentVgames);
+        //         return [...currentVgames];
+        // }
 
-      
-    function handleOnClick(e) {
-        e.preventDefault();
-        dispatch(getVideoGames());
-    }
-    
-    if (!allVgames.length) {
+    if (allVgames?.length <= 0) {
+                dispatch(getVideoGames());
         return <LoaderHome  className='loader-home' />;
     }
     return(
     <div className="home-container">
         <div className="home-c">
-            
-            {/* <h1>Gamming.Life</h1>
-            <Link to='/create_game'><h6>Create a game</h6></Link>
-            {/* REALOAD BUTTON */}
-            {/* <button onClick={e => handleOnClick(e)} >REALOAD GAMES</button><br/><br /> */}
-            
 
                 <div className='search-bar'>
                     {/* SEARCH-BAR: */}
@@ -98,12 +85,12 @@ export default function Home(){
                     paginado = {paginado}
                 />
             </div>
-
+            {/* CARDS: */}
             <div className="card-container">
             {
                 currentVgames?.map((el) => {
                     return(
-                        <div className="card-info">
+                        <div className="card-info" key={el.id}>
                             <Link to={'/videogame/' + el.id} style={{textDecoration:'none', color:'black', borderRadius:0}} key={el.id} >
                                 <Card 
                                     key={el.id}

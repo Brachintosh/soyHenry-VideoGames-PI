@@ -38,7 +38,6 @@ const getAPI_Info = async() => {
                 Genres: el.genres.map(g => g.name),
             }
         });
-        
         // console.log("Soy infoAPI >>> ", infoAPI);
         return infoAPI;
 
@@ -48,7 +47,6 @@ const getAPI_Info = async() => {
 };
 
 const getDB_info = async() => {
-
     try {
         return await Videogame.findAll({
             include: {
@@ -66,7 +64,6 @@ const getDB_info = async() => {
 };
 
 const getAllVgames = async() => {
-
     try {
         const infoAPI = await getAPI_Info();
         const infoDB = await getDB_info();

@@ -17,24 +17,23 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  margin-right: 51%;
+  margin-right: 52%;
 
 }
 
 .vg-logo{
-  border: 0.1px solid rgb(240, 239, 245);
+  /* border: 0.1px solid rgb(240, 239, 245); */
   width: 40px;
   height: 40px;
   display:flex;
   align-items: flex-start;
   flex-direction: row;
-  background-image: url(./icons8-controle-48.png);
+  background-image: url(./videogames.png);
   justify-content: center;
   background-size: 40px 40px;
   background-position: 0px -0.1px; 
   background-repeat: no-repeat;
-  border-radius: 50%;
-
+  border-radius: 40%;
 }
 
 .links-nav{

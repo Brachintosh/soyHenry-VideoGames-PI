@@ -18,7 +18,22 @@ body {
 }
 
 h2{
-    text-shadow: .53px .975px rgba(171, 95, 216, 0.507);
+    text-shadow: 1px .95px rgb(153, 27, 192); 
+}
+
+.vg-logo{
+    /* border: 0.1px solid rgb(240, 239, 245); */
+    width: 40px;
+    height: 40px;
+    display:flex;
+    align-items: flex-start;
+    flex-direction: row;
+    background-image: url(../NavBar//icons8-controle-48.png);
+    justify-content: center;
+    background-size: 40px 40px;
+    background-position: 0px -0.1px; 
+    background-repeat: no-repeat;
+    border-radius: 40%;
 }
 
 .about-text {

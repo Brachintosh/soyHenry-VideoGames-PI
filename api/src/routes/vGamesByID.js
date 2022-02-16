@@ -16,15 +16,14 @@ router.get('/:id', async(req, res) => {
             where:{id},
             include:[Genre, Platform],
         });
-
         // console.log("Soy GameDB by ID >>> ", gameDB)
         return res.json(gameDB);
         }
+
         // Sino está en DB, busco en API:
     const gameAPI = await axios.get(
         `https://api.rawg.io/api/games/${id}?key=${API_KEY}`
     );
-
         // console.log("Soy API-Game by ID >>> ", gameAPI.data)
         res.json(gameAPI.data);
         

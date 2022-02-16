@@ -1,14 +1,21 @@
 import React, { useEffect, useState } from "react";
 import './Details.css';
 import { useParams } from "react-router";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import axios from "axios";
 import LoaderHome from "../LoaderHome/LoaderHome";
 
 export default function Details(){
-    const [vGameDetails, setvGameDetails] = useState(null);
+    const [vGameDetails, setvGameDetails] = useState();
     let {id} = useParams();
+    // let navigate = useNavigate();        useNavigate
+    let location = useLocation();
+    console.log(location);
 
+    // const goHome = () => {
+    //     navigate.push(-1);
+    //   };
+    
     useEffect(() => {
         axios.get(`http://localhost:3001/videogame/${id}`)
             .then((responseBack) => {
@@ -58,6 +65,10 @@ export default function Details(){
                 // SPINNER WHILE IT'S LOADING //
                 <LoaderHome  className='loader' />
             }
+
+            {/* <>
+                <button onClick={goHome}>Go back</button>
+            </> */}
 
             <Link to={'/home'} style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
                 <button><h4>Back to Home</h4></button>

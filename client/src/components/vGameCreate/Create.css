@@ -1,11 +1,139 @@
 .create-container { 
     display: flex;
-    justify-content: center;
-    align-content: center;
-    color: palegoldenrod;
-    height:100vh;
+    justify-content: space-around;
+    align-content: space-around;
+    color: rgb(26, 25, 25);
+    text-shadow: .7px 1.65px rgb(255, 255, 255);
+    height:100%;
+    /* width: 90%; (https://catwithmonocle.com/wp-content/uploads/2020/09/sm35-pattern-v1-1280x1024-1.jpg)  || (http://cdn26.us1.fansshare.com/photo/gamewallpapers/super-mario-level-wallpaper-am-gamer-wallpapers-607911785.jpg);*/
     background-image: url(http://cdn26.us1.fansshare.com/photo/gamewallpapers/super-mario-level-wallpaper-am-gamer-wallpapers-607911785.jpg);
     background-attachment: fixed;
     background-size: scroll;
-    filter: grayscale(100%);
+    filter: grayscale(50%);
+    /* font-family: "Audiowide", sans-serif; */
+    
+}
+
+.labels-grid {
+    width: 90%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-column-gap: 12px;
+    grid-row-gap: 20px;
+    align-items:stretch;
+    margin-bottom: 20px;
+
+}
+.labels-grid-2 {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: space-around;
+    margin-bottom: 20px;
+}
+
+/* --- */
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+
+.link-title {
+  display: flex;
+  justify-items: center;
+  align-content: center;
+  border: 2px green;
+}
+
+.input-form {
+  filter: grayscale(0%);
+  width: 100%;
+  padding: 12px 16px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #26262693;
+  border-radius: 6px;
+  font-family: "Audiowide", sans-serif;
+  font-size: 14px;
+  text-shadow: 1.6px 1.95px rgba(241, 235, 235, 0.753);
+}
+
+.input-form:focus{
+  background-color: rgba(109, 187, 212, 0.767);
+}
+
+.grid-btn-genres {
+    /* display: none; */
+    border: solid rgba(109, 187, 212, 0.767) 2px;
+}
+
+.error {
+  filter: grayscale(0%); 
+  color: red;
+  text-shadow: .6px .95px rgba(241, 235, 235, 0.753);
+  font-size: 22px;
+  width: 80%;
+  box-sizing: border-box;
+  /* border: 1px solid #b32323; */
+  box-shadow: -1px -1.1px 4.10px 2.90px rgba(54, 50, 56, 0.507);
+  border-radius: 6px;
+  padding: 6px 15px;
+  margin: 8px 0;
+  background-color: rgba(221, 94, 94, 0.493);
+}
+
+.btn {
+  border: none;
+  border-radius: 4px;
+  background-color: #009bcfcb;
+  box-shadow: 4px 6px 6px rgba(0, 0, 0, 0.527);
+  padding: 8px 10px;
+  letter-spacing: 1.75px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "Audiowide", sans-serif;
+  text-shadow: 1.5px 1.3px rgb(238, 225, 225);
+  transition:  all;/* usaba >>background-color font-size cursor text-shadow >> "all"*/
+  transition-duration: 0.7s;
+}
+
+.btn:hover {
+  background-color: #4caf4fd3;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-shadow: 2.5px 2.3px rgba(20, 20, 20, 0.692);
+  box-shadow: 8px 10px 12px rgba(0, 0, 0, 0.527);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  justify-content: space-evenly;
+  align-content: center;
+  letter-spacing: 1.75px;
+
+}
+
+.btn-create {
+  font-family: "Audiowide", sans-serif;
+  height: 40px;
+  width: 150px;
+  border: 1px solid white;
+  border-radius: 8px;
+  transition: all 500ms;
+  
+}
+
+.buttons :hover{
+  background-color: #4caf4fd3;
+  color:black;
+  border-radius: 9px;
+  /* border: 1.5px solid black; */
 }
