@@ -46,10 +46,10 @@ import gmail from "../../images/gmailLogo3.png";
                         store them in a local database, require and work them from the API itself.
                 </p>
             </div>
-        <div><div className='vg-logo'></div> <span>Gamming.Life by @brachintosh</span></div>
+        <div><div className='vg-logo'></div> <span>Gamming.Life by @brachintosh</span><br /></div>
         </div>
 
-        <div className="about-contact">
+        <div className="about-contact"><br /><br /><br />
             <h3><u>Contact Me:</u></h3>
             <div className="contact-container">
                 <div className="contact-item">

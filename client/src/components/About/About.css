@@ -7,7 +7,7 @@ body {
 .about-container {
     display: flex;
     height: 100vh;
-    width: 100%;
+    /* width: 100%; */
     justify-content: center;
     align-content: center;
     background-image: url(https://backgroundlabs.com/files/black-mosaic-tiles-1510.png);
@@ -22,7 +22,6 @@ h2{
 }
 
 .vg-logo{
-    /* border: 0.1px solid rgb(240, 239, 245); */
     width: 40px;
     height: 40px;
     display:flex;
@@ -40,15 +39,12 @@ h2{
     margin: 4%;
 }
 
-.about-description, .about-contact {
-    margin: 2vmin;
-}
-
 .about-description {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 75%;
+    max-width: 55%;
+    padding-right: 150px;
 }
 
 .about-description > p {
@@ -56,8 +52,9 @@ h2{
 }
 
 .about-contact {
-    margin-right: -15%;
-    padding-right: 70px;
+    /* margin-right: -10%; */
+
+    /* padding-right: 85px; */
     max-width: 25%;
     display: flex;
     flex-direction: column;
