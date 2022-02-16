@@ -11,7 +11,7 @@ describe("Reducer-Actions Tests:", () => {
         expect(filterCreated("eedeb11b-563b-4709-8a56-6778e26dfa7f")).toEqual({
         type: "FILTER_CREATED",
         payload: "eedeb11b-563b-4709-8a56-6778e26dfa7f",
-        });
+        }); 
     });
 
     it('It should return an action with the props type "orderBy_AZ" & payload, the value is send as an argument:', () => {

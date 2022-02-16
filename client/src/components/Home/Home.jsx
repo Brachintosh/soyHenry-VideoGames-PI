@@ -25,25 +25,19 @@ export default function Home(){
     // eslint-disable-next-line
     const [vgamesPerPage, setVideogamesPerPage] = useState(15);
 
-    const indexOfLastVgames= currentPage * vgamesPerPage    //15
-    const indexOfFirstVgames = indexOfLastVgames - vgamesPerPage    //0
+    const indexOfLastVgames= currentPage * vgamesPerPage    // [14]
+    const indexOfFirstVgames = indexOfLastVgames - vgamesPerPage    // [0]
     const currentVgames = allVgames.slice(indexOfFirstVgames, indexOfLastVgames)
-    console.log(currentVgames)
+    // console.log("Soy currentGamesInPage >>> ", currentVgames)
     const paginado = (pageNumber) =>{
         setCurrentPage(pageNumber)
     }
     // Hooks:
     useEffect(() => {
-        dispatch(getVideoGames());
+        // dispatch(getVideoGames());
         dispatch(getGenres());
         dispatch(getPlatforms());
       }, [dispatch]);
-    
-        // if(allVgames.length === 0) {
-        //         dispatch(getVideoGames());
-        //         console.log("soy currentVgames >>> ", currentVgames);
-        //         return [...currentVgames];
-        // }
 
     if (allVgames?.length <= 0) {
                 dispatch(getVideoGames());

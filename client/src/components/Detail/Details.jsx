@@ -29,7 +29,7 @@ export default function Details(){
 
     return (
         <div className="details-container">
-            <body>
+            {/* <body> */}
                 {/* HASTA QUE NO CARGUEN LOS DATOS HAY UN SPINNER DE "LOADING..." */}
             {
                 vGameDetails ?
@@ -74,7 +74,7 @@ export default function Details(){
                 <button><h4>Back to Home</h4></button>
             </Link><br />
 
-            </body>
+            {/* </body> */}
         </div>
     );
 };

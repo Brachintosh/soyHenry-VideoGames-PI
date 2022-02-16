@@ -26,7 +26,7 @@ function validate(input) {
     }
     if(!input.rating || input.rating === parseInt("0") || input.rating === '' ||
         input.rating < parseFloat("0.1") || input.rating >= parseFloat("5.1") || !Number(input.rating) ) {
-    error.rating = "Rating must be a number from 0 to 5 !"
+    error.rating = "Rating must be a number from 0.1 to 5.0 !"
     }
     if(!(regex_formatDate.test(input.releaseDate))) {
     error.releaseDate = "Release Date must be: YYYY/MM/DD format!";

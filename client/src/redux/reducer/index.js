@@ -86,10 +86,10 @@ function rootReducer(state = initalState, action) {
                             state.allVideoGames.filter(g => g.created_inDB)
                                 : 
                             state.allVideoGames.filter(g => !g.created_inDB);
-                        console.log("Soy created >>> ", createdGame)
+                            console.log("soy action.payload >>> ", action.payload);
             return{
                 ...state,
-                videogames: action.payload === "all" ? state.allVideoGames : createdGame,
+                videogames: action.payload === "all" ? [...state.allVideoGames] : createdGame,
             };
 
 
@@ -101,7 +101,7 @@ function rootReducer(state = initalState, action) {
                                         genresAPI
                                             :
                                         genresAPI.filter((gen) => gen.Genres?.includes(action.payload))
-                                        console.log("soy filteredGenresAPI", filteredGenresAPI);
+                                        // console.log("soy filteredGenresAPI", filteredGenresAPI);
 
             let filteredGenDB =       genresAPI?.filter((x) => {
               
@@ -112,14 +112,11 @@ function rootReducer(state = initalState, action) {
                         }
                         }
                         // Si no lo encontramos en el array no hay nada
-                        return false; 
-                        
+                        return false;  
                     });
-                console.log("soy filteredGenDB", filteredGenDB);
 
         const concatGen = filteredGenresAPI.concat(filteredGenDB);
-
-                console.log("soy action.payload >>> ", action.payload);
+              console.log("soy action.payload >>> ", action.payload);
             
             return {
                 ...state,
