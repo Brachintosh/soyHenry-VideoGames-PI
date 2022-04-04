@@ -49,7 +49,7 @@ conn.sync({ force: true }).then(async () => {
     console.log("Genres, ready!");
   }
 
-  server.listen(3001, () => {
+  server.listen(process.env.PORT, () => {
 
     console.log('Server it`s ready and listening at port: 3001'); // eslint-disable-line no-console
   });
