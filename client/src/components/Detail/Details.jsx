@@ -8,16 +8,9 @@ import LoaderHome from "../LoaderHome/LoaderHome";
 export default function Details(){
     const [vGameDetails, setvGameDetails] = useState();
     let {id} = useParams();
-    // let navigate = useNavigate();        useNavigate
-    let location = useLocation();
-    console.log(location);
-
-    // const goHome = () => {
-    //     navigate.push(-1);
-    //   };
     
     useEffect(() => {
-        axios.get(`http://localhost:3001/videogame/${id}`)
+        axios.get(`/videogame/${id}`)
             .then((responseBack) => {
                 setvGameDetails(responseBack.data)
             })
@@ -29,7 +22,6 @@ export default function Details(){
 
     return (
         <div className="details-container">
-            {/* <body> */}
                 {/* HASTA QUE NO CARGUEN LOS DATOS HAY UN SPINNER DE "LOADING..." */}
             {
                 vGameDetails ?
@@ -66,15 +58,9 @@ export default function Details(){
                 <LoaderHome  className='loader' />
             }
 
-            {/* <>
-                <button onClick={goHome}>Go back</button>
-            </> */}
-
             <Link to={'/home'} style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
                 <button><h4>Back to Home</h4></button>
             </Link><br />
-
-            {/* </body> */}
         </div>
     );
 };
