@@ -39,6 +39,7 @@ conn.sync({ force: true }).then(async () => {
         id: g.id,
         name: g.name,
       }
+      
     });
     // console.log("Soy formatAPI >>> ", formatAPI);
     
