@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './Details.css';
 import { useParams } from "react-router";
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from "axios";
 import LoaderHome from "../LoaderHome/LoaderHome";
 
