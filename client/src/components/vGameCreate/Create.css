@@ -5,13 +5,10 @@
     color: rgb(26, 25, 25);
     text-shadow: .7px 1.65px rgb(255, 255, 255);
     height:100%;
-    /* width: 90%; (https://catwithmonocle.com/wp-content/uploads/2020/09/sm35-pattern-v1-1280x1024-1.jpg)  || (http://cdn26.us1.fansshare.com/photo/gamewallpapers/super-mario-level-wallpaper-am-gamer-wallpapers-607911785.jpg);*/
-    background-image: url(http://cdn26.us1.fansshare.com/photo/gamewallpapers/super-mario-level-wallpaper-am-gamer-wallpapers-607911785.jpg);
+    background-image: url('../../images/bg-create-game.jpeg');
     background-attachment: fixed;
     background-size: scroll;
     filter: grayscale(50%);
-    /* font-family: "Audiowide", sans-serif; */
-    
 }
 
 .labels-grid {
@@ -22,7 +19,6 @@
     grid-row-gap: 20px;
     align-items:stretch;
     margin-bottom: 20px;
-
 }
 .labels-grid-2 {
     width: 90%;
