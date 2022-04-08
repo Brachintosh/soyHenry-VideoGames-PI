@@ -24,7 +24,7 @@ const axios = require('axios');
 
 // Syncing all the models at once:
 // "force: false" NO reinicia el servidor, guarda en DB.
-conn.sync({ force: true }).then(async () => {
+conn.sync({ force: false }).then(async () => {
   // Antes de levantar el servidor:
   // Pre-cargar los Géneros:
   const verifyGenre = await Genre.findAll();
