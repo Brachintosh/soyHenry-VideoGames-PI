@@ -8,7 +8,8 @@
     justify-content: center;
     align-content: center;
     height:100vh;
-    background-image: url(http://cdn26.us1.fansshare.com/photo/gamewallpapers/hex-gamer-hexagon-wallpaper-gaming-pc-look-gamer-wallpapers-2036607667.jpg);
+    /* background-image: url(http://cdn26.us1.fansshare.com/photo/gamewallpapers/hex-gamer-hexagon-wallpaper-gaming-pc-look-gamer-wallpapers-2036607667.jpg); */
+    background-image: url(https://backgroundlabs.com/files/black-mosaic-tiles-1510.png);
     background-attachment: fixed;
     background-size: cover;
 }
