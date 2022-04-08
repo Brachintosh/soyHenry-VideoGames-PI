@@ -34,6 +34,7 @@
     text-shadow: 1.5px 1.3px rgb(238, 225, 225);
     transition:  all;/* usaba >>background-color font-size cursor text-shadow >> "all"*/
     transition-duration: 0.7s;
+    
 }
 
 .access-btn:hover { 
