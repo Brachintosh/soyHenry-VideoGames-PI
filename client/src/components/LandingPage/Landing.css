@@ -8,7 +8,7 @@
     justify-content: center;
     align-content: center;
     height:100vh;
-    background-image: url('../../images/landing-bg.jpeg');
+    background-image: url('http://cdn26.us1.fansshare.com/photo/gamewallpapers/hex-gamer-hexagon-wallpaper-gaming-pc-look-gamer-wallpapers-2036607667.jpg');
     background-attachment: fixed;
     background-size: cover;
 }
@@ -34,7 +34,7 @@
     text-shadow: 1.5px 1.3px rgb(238, 225, 225);
     transition:  all;/* usaba >>background-color font-size cursor text-shadow >> "all"*/
     transition-duration: 0.7s;
-    
+
 }
 
 .access-btn:hover { 
