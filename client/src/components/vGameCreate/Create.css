@@ -5,9 +5,9 @@
     color: rgb(26, 25, 25);
     text-shadow: .7px 1.65px rgb(255, 255, 255);
     height:100%;
-    background-image: url('../../images/create-bg.jpeg');
+    background-image: url(https://unsplash.com/photos/JrZvYuBYzCU);
     background-attachment: fixed;
-    background-size: scroll;
+    background-size: cover;
     filter: grayscale(50%);
 }
 
@@ -19,6 +19,7 @@
     grid-row-gap: 20px;
     align-items:stretch;
     margin-bottom: 20px;
+
 }
 .labels-grid-2 {
     width: 90%;
