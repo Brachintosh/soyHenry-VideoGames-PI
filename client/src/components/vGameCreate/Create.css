@@ -1,3 +1,10 @@
+.box-container{
+  height:100%;
+  display: flex;
+  justify-content: space-around;
+  align-content: space-around;
+}
+
 .create-container { 
     display: flex;
     justify-content: space-around;

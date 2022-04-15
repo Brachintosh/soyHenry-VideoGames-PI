@@ -159,7 +159,7 @@ export default function Create(){
     }
 
     return(
-        <div >
+        <div className='box-container' >
 
             <div key='f-1' className='create-container'>
                 <h2><u>Create your own Game:</u></h2><br />
