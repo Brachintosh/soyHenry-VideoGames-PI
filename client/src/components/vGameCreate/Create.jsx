@@ -21,23 +21,23 @@ function validate(input) {
     if(!input.name || input.name?.trim() >= 4) {
       error.name = "Name your game !";    
     }
-    if(!(regexURL.test(input.background_image))) {
+    else if(!(regexURL.test(input.background_image))) {
     error.background_image = "Background image will be replaced if it's empty!";
     }
-    if(!input.rating || input.rating === parseInt("0") || input.rating === '' ||
+    else if(!input.rating || input.rating === parseInt("0") || input.rating === '' ||
         input.rating < parseFloat("0.1") || input.rating >= parseFloat("5.1") || !Number(input.rating) ) {
     error.rating = "Rating must be a number from 0.1 to 5.0 !"
     }
-    if(!(regex_formatDate.test(input.releaseDate))) {
+    else if(!(regex_formatDate.test(input.releaseDate))) {
     error.releaseDate = "Release Date must be: YYYY/MM/DD format!";
     }                                                                   // if(input.releaseDate?.length <= 0) { // error.releaseDate = "Release Date must be: YYYY/MM/DD format !"; // }
-    if(!input.description || input.description?.trim().length <= 3) {
+    else if(!input.description || input.description?.trim().length <= 3) {
     error.description = "Description must be present.";
     }
-    if(!input.platforms[0]) {
+    else if(!input.platforms[0]) {
     error.platforms = "Platforms are required !";
     }
-    if(!input.genres[0]) {
+    else if(!input.genres[0]) {
     error.genres = "Select at least one Genre!";
     }
 
@@ -159,9 +159,9 @@ export default function Create(){
     }
 
     return(
-        <div className='create-container'>
+        <div >
 
-            <div key='f-1'>
+            <div key='f-1' className='create-container'>
                 <h2><u>Create your own Game:</u></h2><br />
 
                 <form onSubmit={handleSubmit}>
