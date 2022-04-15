@@ -159,12 +159,16 @@ export default function Create(){
     }
 
     return(
-        <div className='box-container' >
+        <div className='form-container' >
 
-            <div key='f-1' className='create-container'>
-                <h2><u>Create your own Game:</u></h2><br />
+            <Link to="/home">
+                <button className='btn'>Go Back</button><br />
+            </Link><br />
 
                 <form onSubmit={handleSubmit}>
+            
+                    <h2><u>Create your own Game:</u></h2><br />
+            
                     <div className='labels-grid'>
                         <div>
                             <label>Name: </label>
@@ -308,17 +312,16 @@ export default function Create(){
 
 
                     <button
-                        className='btn-submit' value='create-game' type='submit'
+                        className='btn' value='create-game' type='submit'
                         id='submit-button'>
                             SUBMIT
                     </button>
 
                 </form><br />
                 
-            <Link to="/home">
+            {/* <Link to="/home">
                 <button className='btn'>Go Back</button><br />
-            </Link><br />
-            </div>  
+            </Link><br /> */}
 
         </div>
     );
