@@ -1,11 +1,16 @@
-.create-container { 
+* {
+  margin: 0;
+  padding:0;
+}
+
+.form-container { 
     display: flex;
     justify-content: space-around;
     align-content: space-around;
+    height:100%;
     color: rgb(26, 25, 25);
     text-shadow: .7px 1.65px rgb(255, 255, 255);
-    height:100%;
-    background-image: url(https://unsplash.com/photos/JrZvYuBYzCU);
+    background-image: url(https://images.unsplash.com/photo-1615401318973-c78255cc9562?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80);
     background-attachment: fixed;
     background-size: cover;
     filter: grayscale(50%);
@@ -30,12 +35,6 @@
 }
 
 /* --- */
-
-* {
-    margin: 0;
-    padding: 0
-}
-
 
 .link-title {
   display: flex;
@@ -132,5 +131,4 @@
   background-color: #4caf4fd3;
   color:black;
   border-radius: 9px;
-  /* border: 1.5px solid black; */
 }
