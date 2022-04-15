@@ -8,8 +8,8 @@
     justify-content: space-around;
     align-content: space-around;
     height:100%;
-    color: rgb(26, 25, 25);
-    text-shadow: .7px 1.65px rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    text-shadow: .7px 1.65px rgb(26, 25, 25);
     background-image: url(https://images.unsplash.com/photo-1615401318973-c78255cc9562?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80);
     background-attachment: fixed;
     background-size: cover;
