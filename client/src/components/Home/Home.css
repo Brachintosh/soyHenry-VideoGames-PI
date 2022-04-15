@@ -5,10 +5,11 @@ body{
 
 
 .home-container {
+    display: flex;
     color: aliceblue;
     background-image: url(https://backgroundlabs.com/files/black-mosaic-tiles-1510.png);
-    background-attachment: fixed;
-    background-size: cover;
+    background-attachment:scroll;
+    background-size:cover;
     padding-top: 10px;
 }
 
